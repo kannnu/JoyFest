@@ -1,0 +1,44 @@
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<simpleviewergallery
+	
+	galleryStyle="MODERN"
+	title="SimpleViewer Gallery"
+	textColor="FFFFFF"
+	frameColor="FFFFFF"
+	frameWidth="20"
+	thumbPosition="LEFT"
+	thumbColumns="3"
+	thumbRows="3"
+	showOpenButton="TRUE"
+	showFullscreenButton="TRUE"	
+	maxImageWidth="640"
+	maxImageHeight="640"
+	useFlickr="false"
+	flickrUserName=""
+	flickrTags=""
+	languageCode="AUTO"
+	languageList=""		
+	imagePath="images/"
+	thumbPath="thumbs/"
+	
+>
+
+<image imageURL="images/joy.jpg" thumbURL="thumbs/wide.jpg" linkURL="" linkTarget="" >	
+</image>
+<?php
+		include("functiona.php");
+		$f = new functiona();
+                    $sql = "select * from images";
+                      $result = $f->tabledata($sql);
+                      foreach($result as $item){
+                echo '
+                   <image imageURL="'.$item[1].'" thumbURL="'.$item[1].'" linkURL="" linkTarget="" >	
+				  </image>
+              ';
+                }
+            ?>
+      </simpleviewergallery>

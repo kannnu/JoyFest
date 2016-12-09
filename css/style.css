@@ -1,0 +1,422 @@
+
+html,
+body
+ { overflow: visible;
+   
+  }
+
+#book{
+    position: static;
+    
+}
+#content{
+    position:absolute;
+}
+html,
+body,
+#content,
+.page {  
+    width: 100%;
+    height: 100%;
+	
+	padding:0px;
+	margin:0px;
+	
+	
+}
+/* css for preloader*/
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(load.gif) center no-repeat #fff;
+}
+
+/*home page navbar*/
+/*Navbar css */
+#custom-bootstrap-menu.navbar-sinwar{
+  min-height: 70px;
+}
+#custom-bootstrap-menu.navbar-sinwar {
+    font-size: 25px;
+    background-image: url("../api/images/bg.png");
+    background-repeat: repeat;
+    background-size: 100% 100%;
+}
+
+#custom-bootstrap-menu.navbar-sinwar .nav-justified>li>a {    
+    font-weight: bold;
+    color: rgba(248, 248, 248, 1);
+}
+#custom-bootstrap-menu.navbar-sinwar .nav-justified>li>a:hover,
+#custom-bootstrap-menu.navbar-sinwar .nav-justified>li>a:focus,
+#custom-bootstrap-menu.navbar-sinwar .nav-justified>li>a:active{
+    color: rgba(252, 250, 247, 1);
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+}
+#custom-bootstrap-menu.navbar-sinwar .nav-justified>.active>a,
+#custom-bootstrap-menu.navbar-sinwar .nav-justified>.active>a:hover,
+#custom-bootstrap-menu.navbar-sinwar .nav-justified>.active>a:focus {
+    border-radius: 10px 10px 10px 10px; 
+    color: rgba(252, 250, 247, 1);
+    background-color: rgba(253, 161, 54, 1);
+}
+#custom-bootstrap-menu.navbar-sinwar .navbar-toggle {
+    border-color: #fda136;
+}
+#custom-bootstrap-menu.navbar-sinwar .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-sinwar .navbar-toggle:focus {
+
+    background-color: #fda136;
+}
+#custom-bootstrap-menu.navbar-sinwar .navbar-toggle .icon-bar {
+    background-color: #fda136;
+}
+#custom-bootstrap-menu.navbar-sinwar .navbar-toggle:hover .icon-bar,
+#custom-bootstrap-menu.navbar-sinwar .navbar-toggle:focus .icon-bar {
+    background-color: #f8f8f8;
+}
+
+
+.check,
+.shownavigation {
+/*    cursor: pointer;*/
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    background-color: #ccc;
+    background-color: rgba(255,255,255,.1);
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 50%;
+    transition: all 0.25s ease;
+    position: relative;
+    top: 2em;
+    left: 2em;
+    box-shadow: inset 0 1px 2px #333;
+    display: block;
+}
+
+.shownavigation:after {
+    position: absolute;
+    content: '';
+    width: 40%;
+    height: 3px;
+    background-color: #555;
+    top: 50%;
+    left: 30%;
+    box-shadow: 0 -7px #555, 0 7px #555;
+}
+
+input,
+.check { display: none; }
+
+.check:hover,
+.shownavigation:hover {
+    background-color: #f0f0f0;
+    background-color: rgba(255,255,255,.75);
+    box-shadow: 0 1px 2px #333;
+}
+
+#showradio:checked + label,
+.move:checked + label,
+.move:checked + label:hover {
+    background-color: #000;
+    background-color: rgba(255,255,255,.5);
+    cursor: default;
+    box-shadow: 0 1px 2px #333;
+}
+
+#showradio:checked + label { cursor: pointer; }
+
+#showradio:checked + label:hover {background-color: #fff;}
+
+#content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.25s ease-out;
+}
+
+
+.page {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#one {
+    background-color: #00acee;
+   
+}
+
+#two {
+    background-color: #3b5998;
+    
+}
+
+#three {
+    background-color: #dc4b39;
+    
+}
+
+#four {
+    background-color: #989898;
+    
+}
+#five{
+	background-color:#00FF00;
+}
+#six{
+	background-color:#FF00FF;
+}
+#showradio:checked ~ .radio { display: block; }
+
+.home { background-image: url(http://yoursmiles.org/bsmile/fun/b0213.gif); }
+
+.events { background-image: url(http://yoursmiles.org/bsmile/fun/b0212.gif); }
+
+.articles{ background-image: url(http://yoursmiles.org/bsmile/fun/b0202.gif); }
+
+.updates{ background-image: url(http://yoursmiles.org/bsmile/fun/b0209.gif); }
+
+.comments{ background-image: url(http://yoursmiles.org/bsmile/fun/b0214.gif); }
+
+.about{ background-image: url(http://yoursmiles.org/bsmile/fun/b0270.gif); }
+
+.active { background-color: #fff; }
+
+@media (min-width:641px) {
+    #page2:checked ~ #content { top: -100%; }
+    #page3:checked ~ #content { top: -200%; }
+    #page4:checked ~ #content { top: -300%; }
+	#page5:checked ~ #content { top: -400%; }
+    #page6:checked ~ #content { top: -500%; }
+}
+
+@media (max-width:640px) {
+    .check,
+    .shownavigation {
+        width: 40px;
+        height: 40px;
+    }
+
+    .page { display: none; }
+
+    #page1:checked ~ #content #one,
+    #page2:checked ~ #content #two,
+    #page3:checked ~ #content #three,
+    #page4:checked ~ #content #four { display: block; }
+	#page5:checked ~ #content #five 
+	#page6:checked ~ #content #six
+
+    .shownavigation,
+    #showradio:checked ~ .radio { display: block; }
+}
+
+@media (max-width:480px) {
+    .check,
+    .shownavigation {
+        top: 0.25em;
+        left: 0.25em;
+    }
+}
+
+
+.card {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.card {
+  margin-top: 10px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  background-clip: padding-box;
+  background-color: white;
+  display:inline-block;
+  width:100%;
+}
+
+.article-box{
+    max-height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+#slideshow { 
+    margin: 5px auto; 
+    position: relative; 
+    width: 100%; 
+    height: 30em; 
+    padding: 10px; 
+    
+}
+
+#slideshow > div { 
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    right: 0px; 
+    bottom: 0px; 
+}
+#slideshow > div > img {
+    width:100%;
+    height:100%;
+}
+
+
+.modal-header {
+    padding-bottom: 5px;
+}
+
+.modal-footer {
+        padding: 0;
+    }
+    
+.modal-footer .btn-group button {
+    height:40px;
+    border-top-left-radius : 0;
+    border-top-right-radius : 0;
+    border: none;
+    border-right: 1px solid #ddd;
+}
+    
+.modal-footer .btn-group:last-child > button {
+    border-right: 0;
+}
+
+
+.carousel-info img {
+    border: 1px solid #f5f5f5;
+    border-radius: 150px !important;
+    height: 75px;
+    padding: 3px;
+    width: 75px;
+}
+ .carousel-info {
+    overflow: hidden;
+}
+.carousel-info img {
+    margin-right: 15px;
+}
+.carousel-info span {
+    display: block;
+}
+ span.testimonials-name {
+    color: #e6400c;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 23px 0 7px;
+}
+span.testimonials-post {
+    color: #656565;
+    font-size: 12px;}
+
+/*--------------------*/
+/* TEAM SECTION */
+/*--------------------*/
+
+#team{
+    float: left;
+    display: inline;
+    width: 100%;
+    padding:80px 0px; 
+}
+.team_area{
+    float: left;
+    display: inline;
+    width: 100%;
+}
+.team_slider{
+    float: left;
+    display: inline;
+    width: 100%;
+}
+.team_slider .slick-next, .team_slider .slick-prev{
+  height: 40px;
+}
+.single_team {
+  border: 0px solid #ccc;
+  border-radius: 5px;
+  display: inline;
+  float: left;
+  padding: 25px 15px;
+  text-align: center;
+  width: 100%;
+}
+.team_img{
+    float: left;
+    display: block;
+    width: 100%;
+}
+.team_img > img {
+  border-radius: 100%;
+  height: 150px;
+  margin: 0 auto 15px;
+  width: 150px;
+}
+.jab > img {
+  border-radius: 100%;
+  height: 200px;
+  margin: 0 auto 15px;
+  width: 200px;
+}
+.single_team h5 {
+  color: #555;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 18px;
+  text-transform: uppercase;
+  font-size: 17px;
+}
+.single_team span {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.single_team p {
+  line-height: 26px;
+}
+.team_social{
+    float: left;
+    display: inline;
+    width: 100%;
+    margin-top: 10px;
+}
+.team_social a {
+  color: #fff;
+  font-size: 18px;
+  display: inline-block;
+  background: #ccc;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+footer{
+  margin-top: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.gallery{
+  width: 100%;
+  height: 100%;
+}
+
